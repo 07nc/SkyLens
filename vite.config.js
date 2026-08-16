@@ -10,6 +10,11 @@ export default defineConfig({
         target: 'https://opensky-network.org/api',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/opensky/, '')
+      },
+      '/auth/opensky': {
+        target: 'https://auth.opensky-network.org/auth',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/auth\/opensky/, '')
       }
     }
   }

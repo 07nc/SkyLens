@@ -14,7 +14,7 @@ export default function LiveMap() {
     [6.0, 68.0],  
     [37.5, 97.5] 
   ];
-  const { liveFlights, selectedFlight, setSelectedFlight } = useFlights();
+  const { liveFlights, selectedFlightID, setSelectedFlightID } = useFlights();
   return (
     <>
       <MapContainer 
@@ -33,10 +33,10 @@ export default function LiveMap() {
         <AirplaneMarker 
           key={flight.id}                 
           flight={flight} 
-          isSelected={selectedFlight?.id === flight.id} 
+          isSelected={selectedFlightID === flight.id} 
           onSelect={(id) => {
-            const flightToSelect = id === -1 ? null : liveFlights.find(f => f.id === id);
-            setSelectedFlight(flightToSelect);
+            const idToSelect = id === -1 ? null : id;
+            setSelectedFlightID(idToSelect);
           }}      
         />
       ))}
