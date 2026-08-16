@@ -7,30 +7,14 @@ import {
 import AirplaneMarker from './AirplaneMarker';
 
 
-//mock useFlights function
-import { useState } from 'react';
-function useFlights() {
-  const [selectedFlightId, setSelectedFlightId] = useState(-1);
-  const mockFlights = [
-    { id: 1, latitude: 25, longitude: 83, heading: 140 },
-    { id: 2, latitude: 20.8, longitude: 72, heading: 110 },
-    { id: 3, latitude: 19, longitude: 78.99, heading: 0 },
-    { id: 4, latitude: 20, longitude: 85, heading: 150 }
-  ];
-
-  return {
-    liveFlights: mockFlights,
-    selectedFlightId,
-    onSelect: setSelectedFlightId
-  };
-}
+import { useFlights } from '../../context/FlightContext';
 
 export default function LiveMap() {
     const indiaBounds = [
     [6.0, 68.0],  
     [37.5, 97.5] 
   ];
-  const { liveFlights, selectedFlightId, onSelect } = useFlights();
+  const { liveFlights, selectedFlight, setSelectedFlight } = useFlights();
   return (
     <>
       <MapContainer 
@@ -49,8 +33,11 @@ export default function LiveMap() {
         <AirplaneMarker 
           key={flight.id}                 
           flight={flight} 
-          isSelected={selectedFlightId === flight.id} 
-          onSelect={onSelect}      
+          isSelected={selectedFlight?.id === flight.id} 
+          onSelect={(id) => {
+            const flightToSelect = id === -1 ? null : liveFlights.find(f => f.id === id);
+            setSelectedFlight(flightToSelect);
+          }}      
         />
       ))}
 
