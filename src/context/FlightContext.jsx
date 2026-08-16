@@ -10,7 +10,7 @@ const FlightContext = createContext(null)
 export function FlightProvider({children}){
 
     const [liveFlights, setLiveFlights] = useState([])
-    const [selectedFlight, setSelectedFlight] = useState(null)
+    const [selectedFlightID, setSelectedFlightID] = useState(null)
 
     useEffect(() => {
         const stopPolling = startFlightPolling(setLiveFlights)
@@ -22,8 +22,8 @@ export function FlightProvider({children}){
     return (
         <FlightContext.Provider value={{ 
             liveFlights, 
-            selectedFlight, 
-            setSelectedFlight 
+            selectedFlightID, 
+            setSelectedFlightID 
         }}>
             {children}
         </FlightContext.Provider>
