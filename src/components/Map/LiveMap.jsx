@@ -5,7 +5,7 @@ import {
   Popup
 } from 'react-leaflet';
 import AirplaneMarker from './AirplaneMarker';
-
+import UserLocationMarker from './UserLocationMarker';
 
 import { useFlights } from '../../context/FlightContext';
 
@@ -40,7 +40,8 @@ export default function LiveMap() {
           }}      
         />
       ))}
-
+      <UserLocationMarker/>
+      
       </MapContainer>
     </>
   );
