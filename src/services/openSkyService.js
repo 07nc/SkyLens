@@ -1,18 +1,13 @@
 const TOKEN_URL = "/auth/opensky/realms/opensky-network/protocol/openid-connect/token"
 const OPEN_SKY_URL = "/api/opensky/states/all"
-const CLIENT_ID="aryaaan1407-api-client"
-const CLIENT_SECRET="6MuFXQFZRK5FAUV2ZQAWeIcOPgeHNtRC"
+const CLIENT_ID = import.meta.env.VITE_OPENSKY_CLIENT_ID
+const CLIENT_SECRET = import.meta.env.VITE_OPENSKY_CLIENT_SECRET
 
-
-const POLL_INTERVAL_MS = 30000
+const POLL_INTERVAL_MS = 15000
 const INDIA_BOUNDS = {lamin: 6.5, lamax: 37.5, lomin: 68.0, lomax: 97.5}
-
 
 let cachedToken = null
 let tokenExpiresAt = 0
-
-
-
 
 async function getAccessToken() {
     if (cachedToken && Date.now() < tokenExpiresAt - 60000) {
@@ -42,10 +37,6 @@ async function getAccessToken() {
     return cachedToken
 }
 
-
-
-
-
 async function fetchLiveFlights(){
     const token = await getAccessToken()
 
@@ -71,9 +62,6 @@ async function fetchLiveFlights(){
 }
 
 
-
-
-
 function parseFlightData(rawData) {
   if (!rawData || !rawData.states) {
     return [];
@@ -93,9 +81,6 @@ function parseFlightData(rawData) {
 
     return flights
 }
-
-
-
 
 
 async function getLiveFlights() {
