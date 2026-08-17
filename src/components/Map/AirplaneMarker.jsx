@@ -6,8 +6,8 @@ export default function AirplaneMarker({flight, isSelected, onSelect}){
         <svg viewBox="0 0 100 100" width="100%" height="100%">
             <path 
                 fill="${isSelected ? '#0bdbfbfb' : '#ffbbcbfe'}" 
-                stroke="#121212" 
-                stroke-width="5" 
+                stroke="#4f4e4e" 
+                stroke-width="2" 
                 stroke-linejoin="round"
                 d="M 50 15 C 50 15, 54 20, 56 37 L 92 54 L 92 60 L 56 62 L 55 77 L 70 90 L 70 94 L 50 92 L 30 94 L 30 90 L 45 77 L 44 62 L 8 60 L 8 54 L 44 37 C 46 20, 50 15, 50 15 Z" 
             />
