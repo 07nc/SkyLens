@@ -6,11 +6,12 @@ import '../../index.css';
 export default function UserLocationMarker(){
     const [position,setPosition]=useState(null);
     useEffect(()=>{
+        if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(
             (location)=>{setPosition([location.coords.latitude,location.coords.longitude])},
             (error)=>{console.warn("Location access denied: ",error.message)},
             {enableHighAccuracy:true,timeout:5000,maximumAge:0}
-        )
+        )}
     },[])
     if(!position){
         return null;
@@ -25,7 +26,7 @@ export default function UserLocationMarker(){
         iconAnchor:[12,12]
     })
     return <Marker position={position} icon={userLocationIcon}>
-        <Popup> You are here</Popup>
+        <Popup>You are here</Popup>
     </Marker>
 
 }

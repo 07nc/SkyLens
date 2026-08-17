@@ -21,7 +21,10 @@ export default function LiveMap() {
         center={[20.5937, 78.9629]} 
         zoom={5} 
         minZoom={4}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
+        zoomSnap={1} 
+        zoomDelta={1} 
+        touchZoom={true}
         maxBoundsViscosity={1.0}
         style={{ height: '100%', width: '100%' }}
         maxBounds={indiaBounds}
