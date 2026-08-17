@@ -2,7 +2,17 @@ import { Marker, Popup } from 'react-leaflet';
 import '../../index.css' 
 import L from 'leaflet';
 export default function AirplaneMarker({flight, isSelected, onSelect}){
-    const svgPlane = `<svg viewBox="0 0 24 24" id="airplane-mode" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="primary" d="M19.58,12.08,14,8.16V4a2,2,0,0,0-4,0V8.16L4.42,12.08a1,1,0,0,0-.42.81v.93a1,1,0,0,0,1.16,1L10,14v3.62l-1.71,1.7A1.05,1.05,0,0,0,8,20v1a1,1,0,0,0,1.45.89L12,20.62l2.55,1.27A1,1,0,0,0,16,21V20a1.05,1.05,0,0,0-.29-.71L14,17.62V14l4.84.81a1,1,0,0,0,1.16-1v-.93A1,1,0,0,0,19.58,12.08Z" style="fill: ${!isSelected?'#ffbbcbfe':'#0bdbfbfb'};"></path></g></svg>`;
+    const svgPlane = `
+        <svg viewBox="0 0 100 100" width="100%" height="100%">
+            <path 
+                fill="${isSelected ? '#0bdbfbfb' : '#ffbbcbfe'}" 
+                stroke="#121212" 
+                stroke-width="5" 
+                stroke-linejoin="round"
+                d="M 50 15 C 50 15, 54 20, 56 37 L 92 54 L 92 60 L 56 62 L 55 77 L 70 90 L 70 94 L 50 92 L 30 94 L 30 90 L 45 77 L 44 62 L 8 60 L 8 54 L 44 37 C 46 20, 50 15, 50 15 Z" 
+            />
+        </svg>
+    `;
     
     var airplaneIcon=L.divIcon({html:`<div class="marker-container">
                 <div style="
@@ -10,7 +20,8 @@ export default function AirplaneMarker({flight, isSelected, onSelect}){
                 transition: transform 0.3s ease;
                 display: flex;
                 align-items: center; 
-                justify-content: center;">
+                justify-content: center;
+                ">
                     ${svgPlane}
                 </div>
             </div>`,

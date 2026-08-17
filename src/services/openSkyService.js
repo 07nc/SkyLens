@@ -79,7 +79,9 @@ function parseFlightData(rawData) {
     return [];
   }
 
-  const flights = rawData.states.map(s => ({
+  const flights = rawData.states
+  .filter(s => s[8] === false)
+  .map(s => ({
         id: s[0],
         callsign: s[1] ? s[1].trim() : "Unknown",
         latitude: s[6],
