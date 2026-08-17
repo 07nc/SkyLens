@@ -1,7 +1,7 @@
 const TOKEN_URL = "/auth/opensky/realms/opensky-network/protocol/openid-connect/token"
 const OPEN_SKY_URL = "/api/opensky/states/all"
-const CLIENT_ID = import.meta.env.VITE_OPENSKY_CLIENT_ID
-const CLIENT_SECRET = import.meta.env.VITE_OPENSKY_CLIENT_SECRET
+const CLIENT_ID="aryaaan1407-api-client"
+const CLIENT_SECRET="6MuFXQFZRK5FAUV2ZQAWeIcOPgeHNtRC"
 
 
 const POLL_INTERVAL_MS = 30000
