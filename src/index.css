@@ -1,6 +1,129 @@
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0f14;
+    color: #f1f5f9;
+}
+
+.navbar {
+    width: 100%;
+    height: 72px;
+
+    background: #111820;
+    border-bottom: 1px solid #26313d;
+}
+
+.nav-container {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+
+    color: #f1f5f9;
+}
+
+.logo-name span:first-child {
+    color: #38bdf8;
+    font-size: 20px;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.switch-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-buttons button {
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: #94a3b8;
+
+    padding: 10px 16px;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.nav-buttons button:hover {
+    background: #1a232d;
+    color: #f1f5f9;
+}
+
+.switch-buttons button.active {
+    background: #1a232d;
+    color: #38bdf8;
+    box-shadow: inset 0 -2px 0 #38bdf8;
+}
+
+.nav-buttons > button:last-child {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #26313d;
+    border-radius: 50%;
+
+    font-size: 17px;
+}
+
+@media (max-width: 650px) {
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .logo-name {
+        font-size: 19px;
+    }
+
+    .nav-buttons {
+        gap: 5px;
+    }
+
+    .switch-buttons {
+        gap: 2px;
+    }
+
+    .nav-buttons button {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
 }
