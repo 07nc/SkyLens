@@ -1,0 +1,40 @@
+import { Marker, Popup } from 'react-leaflet';
+import '../../index.css' 
+import L from 'leaflet';
+export default function AirplaneMarker({flight, isSelected, onSelect}){
+    const svgPlane = `<svg viewBox="0 0 24 24" id="airplane-mode" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" ststroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+    <path id="primary"
+    stroke="#4f4e4e" 
+    stroke-width="1
+    
+    " 
+    stroke-linejoin="round"
+    d="M19.58,12.08,14,8.16V4a2,2,0,0,0-4,0V8.16L4.42,12.08a1,1,0,0,0-.42.81v.93a1,1,0,0,0,1.16,1L10,14v3.62l-1.71,1.7A1.05,1.05,0,0,0,8,20v1a1,1,0,0,0,1.45.89L12,20.62l2.55,1.27A1,1,0,0,0,16,21V20a1.05,1.05,0,0,0-.29-.71L14,17.62V14l4.84.81a1,1,0,0,0,1.16-1v-.93A1,1,0,0,0,19.58,12.08Z" 
+    style="fill: ${!isSelected?'#ffbbcbfe':'#0bdbfbfb'};">
+    </path></g></svg>`;
+    
+    var airplaneIcon=L.divIcon({html:`<div class="marker-container">
+                <div style="
+                transform: rotate(${flight.heading}deg);
+                transition: transform 0.3s ease;
+                display: flex;
+                align-items: center; 
+                justify-content: center;
+                ">
+                    ${svgPlane}
+                </div>
+            </div>`,
+        className:isSelected?"selected-airplane":"",
+        iconSize: [30, 30], 
+        iconAnchor: [15,15]
+    })
+    return <Marker
+        position={[flight.latitude,flight.longitude]}
+        icon={airplaneIcon}
+        eventHandlers={{
+            click:()=>!isSelected?onSelect(flight.id):onSelect(-1)
+        }}
+    >
+
+    </Marker>
+}
