@@ -1,15 +1,14 @@
-import { useState } from "react";
-import Navbar from "./components/Flight-Finder/Navbar";
-function App() {
-    const [currentView, setCurrentView] = useState("finder");
+import LiveMap from './components/map/LiveMap'
+import { FlightProvider } from './context/FlightContext'
 
-    return (
-        <div>
-            <Navbar
-                currentView={currentView}
-                onViewChange={setCurrentView}
-            />
-        </div>
-    );
+function App() {
+  return (
+    <FlightProvider>
+      <div style={{ height: '100vh', width: '100vw' }}>
+        <LiveMap />
+      </div>
+    </FlightProvider>
+  )
 }
-export default App;
+
+export default App
