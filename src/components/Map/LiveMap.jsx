@@ -20,7 +20,7 @@ export default function LiveMap() {
       <MapContainer 
         center={[20.5937, 78.9629]} 
         zoom={5} 
-        minZoom={4}
+        minZoom={5}
         scrollWheelZoom={true}
         zoomSnap={1} 
         zoomDelta={1} 
