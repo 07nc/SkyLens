@@ -3,7 +3,7 @@ const OPEN_SKY_URL = "/api/opensky/states/all"
 const CLIENT_ID = import.meta.env.VITE_OPENSKY_CLIENT_ID
 const CLIENT_SECRET = import.meta.env.VITE_OPENSKY_CLIENT_SECRET
 
-const POLL_INTERVAL_MS = 15000
+const POLL_INTERVAL_MS = 30000
 const INDIA_BOUNDS = {lamin: 6.5, lamax: 37.5, lomin: 68.0, lomax: 97.5}
 
 let cachedToken = null
