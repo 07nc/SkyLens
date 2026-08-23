@@ -275,3 +275,59 @@ body {
   height: 24px;
   position: relative;
 }
+.flight-results {
+    width: 100%;
+    margin-top: 24px;
+    border: 1px solid #26313d;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #111820;
+}
+
+.flight-row-header,
+.flight-row-result {
+    display: grid;
+    grid-template-columns:
+        1.4fr
+        1fr
+        1fr
+        2fr
+        1.4fr
+        1.4fr;
+
+    align-items: center;
+}
+
+.flight-row-header {
+    padding: 14px 16px;
+
+    background: #18212b;
+    color: #38bdf8;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.flight-row-result {
+    padding: 16px;
+
+    color: #dbe4ee;
+    font-size: 14px;
+
+    border-top: 1px solid #26313d;
+
+    transition: background 0.2s ease;
+}
+
+.flight-row-result:hover {
+    background: #18212b;
+}
+
+.flight-row-result > div:nth-child(2) {
+    color: #38bdf8;
+    font-weight: 500;
+}
+
+.flight-row-result > div:nth-child(4) {
+    color: #94a3b8;
+}
