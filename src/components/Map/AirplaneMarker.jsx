@@ -2,7 +2,7 @@ import { Marker, Popup } from 'react-leaflet';
 import '../../index.css' 
 import L from 'leaflet';
 export default function AirplaneMarker({flight, isSelected, onSelect}){
-   const svgPlane = `<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+ const svgPlane = `<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
   <g 
     transform="translate(0,512) scale(0.1,-0.1)" 
     fill="${!isSelected ? '#FFCC00' : '#0bdbfbfb'}" 
