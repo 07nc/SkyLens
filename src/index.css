@@ -331,3 +331,75 @@ body {
 .flight-row-result > div:nth-child(4) {
     color: #94a3b8;
 }
+.flight-finder-view {
+    min-height: calc(100vh - 83px);
+    padding: 40px 6%;
+    background: #0b1117;
+    color: #e5e7eb;
+}
+
+.flight-finder-form {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #111a23;
+    border: 1px solid #26313d;
+    border-radius: 14px;
+}
+
+.flight-finder-form h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #f1f5f9;
+}
+
+.form-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 18px;
+    align-items: end;
+}
+
+.form-inp {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-inp label {
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.form-inp input {
+    width: 100%;
+    padding: 12px 14px;
+    background: #0b1117;
+    color: #e5e7eb;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+.form-inp input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.12);
+}
+
+.search-button {
+    padding: 12px 20px;
+    background: #38bdf8;
+    color: #071018;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.search-button:hover {
+    background: #7dd3fc;
+}

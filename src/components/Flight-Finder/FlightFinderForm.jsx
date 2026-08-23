@@ -1,27 +1,13 @@
 import { useState } from "react";
-function FlightFinderForm({onSearch}){
+function FlightFinderForm(){
     const [origin, setOrigin] = useState("");
     const [destination, setDestination] = useState("");
     const [date, setDate] = useState("");
     const today = new Date();
-    const maxDate = new Date();
     const formatDate = (date) => {
     return date.toISOString().split("T")[0];
     };
     const minDate = formatDate(today);
-    const maxAllowedDate = formatDate(maxDate);
-    maxDate.setDate(today.getDate() + 7);
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!origin || !destination || !date) {
-            return;
-        }
-        onSearch({
-            origin,
-            destination,
-            date
-        });
-    };
     return (
         <form className="flight-finder-form">
             <h2>Find a Flight</h2>
@@ -46,7 +32,6 @@ function FlightFinderForm({onSearch}){
                     <input id="date" type="date"
                     value={date}
                     min={minDate}
-                    max={maxAllowedDate}
                     onChange={(e) => setDate(e.target.value)}
                     ></input>
                 </div>
