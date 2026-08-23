@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   MapContainer,
   TileLayer,
@@ -6,6 +7,7 @@ import {
 } from 'react-leaflet';
 import AirplaneMarker from './AirplaneMarker';
 import UserLocationMarker from './UserLocationMarker';
+import MapFilterBar from '../UI/MapFilterBar';
 
 import { useFlights } from '../../context/FlightContext';
 
@@ -15,8 +17,18 @@ export default function LiveMap() {
     [37.5, 97.5] 
   ];
   const { liveFlights, selectedFlightID, setSelectedFlightID } = useFlights();
+  const [filterAirlineIcao, setFilterAirlineIcao] = useState(null);
+
+  const filteredFlights = filterAirlineIcao 
+    ? liveFlights.filter(flight => flight.callsign && flight.callsign.toUpperCase().startsWith(filterAirlineIcao.toUpperCase()))
+    : liveFlights;
+
   return (
-    <>
+    <div style={{ position: 'relative', height: '100%', width: '100%' }}>
+      <MapFilterBar 
+        selectedAirlineIcao={filterAirlineIcao}
+        onAirlineSelect={setFilterAirlineIcao}
+      />
       <MapContainer 
         center={[20.5937, 78.9629]} 
         zoom={5} 
@@ -26,13 +38,13 @@ export default function LiveMap() {
         zoomDelta={1} 
         touchZoom={true}
         maxBoundsViscosity={1.0}
-        style={{ height: '100%', width: '100%' }}
+        style={{ height: '100%', width: '100%', zIndex: 0 }}
         maxBounds={indiaBounds}
       >
         
         <TileLayer url="https://tiles.stadiamaps.com/tiles/stamen_toner_dark/{z}/{x}/{y}{r}.jpg"/>
 
-        {liveFlights.map((flight) => (
+        {filteredFlights.map((flight) => (
         <AirplaneMarker 
           key={flight.id}                 
           flight={flight} 
@@ -46,6 +58,6 @@ export default function LiveMap() {
       <UserLocationMarker/>
       
       </MapContainer>
-    </>
+    </div>
   );
 }

@@ -22,8 +22,8 @@ export default function UserLocationMarker(){
         </div>
         `,
         className:'',
-        iconSize:[24,24],
-        iconAnchor:[12,12]
+        iconSize:[30,30],
+        iconAnchor:[15,15]
     })
     return <Marker position={position} icon={userLocationIcon}>
         <Popup>You are here</Popup>

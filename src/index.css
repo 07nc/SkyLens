@@ -403,3 +403,90 @@ body {
 .search-button:hover {
     background: #7dd3fc;
 }
+
+.map-filter-bar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 300px;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #111820;
+  border: 1px solid #26313d;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.search-icon {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #94a3b8;
+}
+
+.search-input-wrapper input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #f1f5f9;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #64748b;
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.clear-btn:hover {
+  color: #f1f5f9;
+}
+
+.autocomplete-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  background: #111820;
+  border: 1px solid #26313d;
+  border-radius: 8px;
+  list-style: none;
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.autocomplete-dropdown li {
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #1a232d;
+  transition: background 0.2s;
+}
+
+.autocomplete-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.autocomplete-dropdown li:hover {
+  background: #1a232d;
+}
+
+.airline-name {
+  font-size: 14px;
+  color: #f1f5f9;
+}
