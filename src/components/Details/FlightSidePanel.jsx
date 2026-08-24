@@ -3,20 +3,20 @@ import { useFlights } from '../../context/FlightContext';
 import { fetchFlightDetails } from '../../services/flightDetailsService';
 
 export default function FlightSidePanel() {
-    // Beginner syntax: simple destructuring and state hooks
+
     const { selectedFlightID, setSelectedFlightID, liveFlights } = useFlights();
     const [details, setDetails] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    // Find the flight from the live data
+
     const selectedFlight = liveFlights.find(f => f.id === selectedFlightID);
 
     useEffect(() => {
-        // If we have a selected flight, fetch its details
+
         if (selectedFlightID && selectedFlight) {
             setLoading(true);
-            setDetails(null); // Clear old details
-            
+            setDetails(null);
+
             fetchFlightDetails(selectedFlightID, selectedFlight.callsign)
                 .then(data => {
                     setDetails(data);
@@ -27,9 +27,8 @@ export default function FlightSidePanel() {
                     setLoading(false);
                 });
         }
-    }, [selectedFlightID, selectedFlight]); // Run this when selection changes
+    }, [selectedFlightID, selectedFlight]);
 
-    // Don't show the panel if no flight is selected
     if (!selectedFlightID) {
         return null;
     }
@@ -44,7 +43,7 @@ export default function FlightSidePanel() {
             backgroundColor: '#120202',
             border: '1px solid #26313d',
             color: '#f1f5f9',
-            zIndex: 999, // slightly below MapFilterBar if they ever overlap
+            zIndex: 999,
             boxShadow: '0 8px 24px rgba(0,0,0,0.6)',
             borderRadius: '12px',
             padding: '24px',
@@ -55,12 +54,12 @@ export default function FlightSidePanel() {
         }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                 <h2 style={{ fontSize: '20px', margin: 0, color: '#f1f5f9' }}>Flight Details</h2>
-                <button 
+                <button
                     onClick={() => setSelectedFlightID(null)}
-                    style={{ 
-                        background: 'transparent', 
-                        color: '#94a3b8', 
-                        border: 'none', 
+                    style={{
+                        background: 'transparent',
+                        color: '#94a3b8',
+                        border: 'none',
                         fontSize: '18px',
                         cursor: 'pointer',
                         padding: '4px'
@@ -92,7 +91,7 @@ export default function FlightSidePanel() {
                             <div>{details.icaoTypeCode}</div>
                         </div>
                     </div>
-                    
+
                     <div style={{ marginTop: '20px' }}>
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '16px', background: '#1a0505', padding: '12px', borderRadius: '8px', border: '1px solid #26313d' }}>
                             <div>
@@ -114,8 +113,7 @@ export default function FlightSidePanel() {
             ) : (
                 <p style={{ color: '#94a3b8' }}>No detailed information available.</p>
             )}
-            
-            {/* Always show the live data we already have */}
+
             {selectedFlight && (
                 <div style={{ marginTop: '24px', borderTop: '1px solid #26313d', paddingTop: '20px' }}>
                     <h3 style={{ fontSize: '16px', color: '#f1f5f9', marginBottom: '12px' }}>Live Telemetry</h3>
