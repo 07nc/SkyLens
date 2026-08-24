@@ -13,7 +13,7 @@ function App() {
     <FlightProvider>
       <div style={{ height: '100%', width: '100vw', flex: 1, position: 'relative', overflow: 'hidden' }}>
         {currentView === 'radar' ? <LiveMap /> : <FlightFinderView />}
-        <FlightSidePanel />
+        {currentView === 'radar' && <FlightSidePanel />}
       </div>
     </FlightProvider>
   </div>

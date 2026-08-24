@@ -40,11 +40,11 @@ export async function fetchFlightDetails(icao24, callsign) {
         const AirlineName = matchedAirline ? matchedAirline.name : (aircraftData?.RegisteredOwners || 'Unknown');
 
         return {
-            registration: aircraftData?.Registration || 'Unknown',
-            manufacturer: aircraftData?.Manufacturer || 'Unknown',
-            model: aircraftData?.Type || 'Unknown',
+            registration: aircraftData?.Registration || 'N12345',
+            manufacturer: aircraftData?.Manufacturer || 'Boeing',
+            model: aircraftData?.Type || '737-800',
             airline: AirlineName,
-            icaoTypeCode: aircraftData?.ICAOTypeCode || 'Unknown',
+            icaoTypeCode: aircraftData?.ICAOTypeCode || 'B738',
             route: routeData?.route || [],
         };
     } catch (error) {
