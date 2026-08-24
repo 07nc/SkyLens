@@ -35,21 +35,20 @@ export async function fetchFlightDetails(icao24, callsign) {
             fetchRoute()
         ]);
 
-        // Use callsign (first 3 letters) to look up airline in local JSON
         const airlineIcao = callsign && callsign.length >= 3 ? callsign.substring(0, 3).toUpperCase() : null;
         const matchedAirline = airlinesData.find(a => a.icao === airlineIcao);
-        const finalAirlineName = matchedAirline ? matchedAirline.name : (aircraftData?.RegisteredOwners || 'Unknown');
+        const AirlineName = matchedAirline ? matchedAirline.name : (aircraftData?.RegisteredOwners || 'Unknown');
 
         return {
             registration: aircraftData?.Registration || 'Unknown',
             manufacturer: aircraftData?.Manufacturer || 'Unknown',
             model: aircraftData?.Type || 'Unknown',
-            airline: finalAirlineName,
+            airline: AirlineName,
             icaoTypeCode: aircraftData?.ICAOTypeCode || 'Unknown',
             route: routeData?.route || [],
-            operatorIata: routeData?.operatorIata || 'Unknown'
         };
     } catch (error) {
+
         console.error("Failed to fetch combined flight details:", error);
         return null;
     }
