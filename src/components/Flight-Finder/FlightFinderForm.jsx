@@ -35,7 +35,7 @@ function FlightFinderForm(){
                     onChange={(e) => setDate(e.target.value)}
                     ></input>
                 </div>
-                <button type="submit" className="search-button">Search Flight</button>
+                <button type="button" className="search-button">Search Flight</button>
             </div>
         </form>
 
