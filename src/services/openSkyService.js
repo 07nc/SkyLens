@@ -106,4 +106,4 @@ function startFlightPolling(setLiveFlights) {
     return () => clearInterval(intervalId)
 }
 
-export { startFlightPolling }
+export { startFlightPolling, getAccessToken }
