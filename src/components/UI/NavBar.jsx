@@ -1,11 +1,10 @@
+import SkylensLogo from "./SkyLensLogo";
+
 function Navbar({ currentView, onViewChange }) {
     return (
         <nav className="navbar">
             <div className="nav-container">
-                <div className="logo-name">
-                    <span className="logo-icon">◉</span>
-                    <span>SkyLens</span>
-                </div>
+                <SkylensLogo/>
                 <div className="nav-buttons">
                     <div className="switch-buttons">
                         <button
