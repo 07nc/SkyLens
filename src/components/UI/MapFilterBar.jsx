@@ -25,8 +25,7 @@ export default function MapFilterBar({ onAirlineSelect }) {
   };
 
   const suggestions = searchTerm.trim() ? airlinesData.filter(a => 
-    a.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    a.icao.toLowerCase().includes(searchTerm.toLowerCase())
+    a.name.toLowerCase().includes(searchTerm.toLowerCase())
   ) : [];
 
   return (
