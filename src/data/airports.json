@@ -1,0 +1,962 @@
+[
+  {
+    "iata": "DEL",
+    "icao": "VIDP",
+    "name": "Indira Gandhi International Airport",
+    "city": "New Delhi",
+    "lat": 28.5562,
+    "lon": 77.1
+  },
+  {
+    "iata": "BOM",
+    "icao": "VABB",
+    "name": "Chhatrapati Shivaji Maharaj International Airport",
+    "city": "Mumbai",
+    "lat": 19.0896,
+    "lon": 72.8656
+  },
+  {
+    "iata": "BLR",
+    "icao": "VOBL",
+    "name": "Kempegowda International Airport",
+    "city": "Bengaluru",
+    "lat": 13.1986,
+    "lon": 77.7066
+  },
+  {
+    "iata": "HYD",
+    "icao": "VOHS",
+    "name": "Rajiv Gandhi International Airport",
+    "city": "Hyderabad",
+    "lat": 17.2403,
+    "lon": 78.4294
+  },
+  {
+    "iata": "MAA",
+    "icao": "VOMM",
+    "name": "Chennai International Airport",
+    "city": "Chennai",
+    "lat": 12.9941,
+    "lon": 80.1709
+  },
+  {
+    "iata": "CCU",
+    "icao": "VECC",
+    "name": "Netaji Subhash Chandra Bose International Airport",
+    "city": "Kolkata",
+    "lat": 22.6547,
+    "lon": 88.4467
+  },
+  {
+    "iata": "AMD",
+    "icao": "VAAH",
+    "name": "Sardar Vallabhbhai Patel International Airport",
+    "city": "Ahmedabad",
+    "lat": 23.0734,
+    "lon": 72.6347
+  },
+  {
+    "iata": "COK",
+    "icao": "VOCI",
+    "name": "Cochin International Airport",
+    "city": "Kochi",
+    "lat": 10.1518,
+    "lon": 76.393
+  },
+  {
+    "iata": "GOI",
+    "icao": "VAGO",
+    "name": "Dabolim Airport",
+    "city": "Goa",
+    "lat": 15.3808,
+    "lon": 73.8314
+  },
+  {
+    "iata": "GOX",
+    "icao": "VOGA",
+    "name": "Manohar International Airport",
+    "city": "Mopa, Goa",
+    "lat": 15.7667,
+    "lon": 73.8667
+  },
+  {
+    "iata": "PNQ",
+    "icao": "VAPO",
+    "name": "Pune Airport",
+    "city": "Pune",
+    "lat": 18.5822,
+    "lon": 73.9197
+  },
+  {
+    "iata": "JAI",
+    "icao": "VIJP",
+    "name": "Jaipur International Airport",
+    "city": "Jaipur",
+    "lat": 26.8242,
+    "lon": 75.8122
+  },
+  {
+    "iata": "LKO",
+    "icao": "VILK",
+    "name": "Chaudhary Charan Singh International Airport",
+    "city": "Lucknow",
+    "lat": 26.7606,
+    "lon": 80.8893
+  },
+  {
+    "iata": "GAU",
+    "icao": "VEGT",
+    "name": "Lokpriya Gopinath Bordoloi International Airport",
+    "city": "Guwahati",
+    "lat": 26.1061,
+    "lon": 91.5859
+  },
+  {
+    "iata": "TRV",
+    "icao": "VOTV",
+    "name": "Trivandrum International Airport",
+    "city": "Thiruvananthapuram",
+    "lat": 8.4821,
+    "lon": 76.92
+  },
+  {
+    "iata": "CCJ",
+    "icao": "VOCL",
+    "name": "Calicut International Airport",
+    "city": "Kozhikode",
+    "lat": 11.1368,
+    "lon": 75.9553
+  },
+  {
+    "iata": "CNN",
+    "icao": "VOKN",
+    "name": "Kannur International Airport",
+    "city": "Kannur",
+    "lat": 11.9174,
+    "lon": 75.5484
+  },
+  {
+    "iata": "IXE",
+    "icao": "VOML",
+    "name": "Mangaluru International Airport",
+    "city": "Mangalore",
+    "lat": 12.9613,
+    "lon": 74.8901
+  },
+  {
+    "iata": "CJB",
+    "icao": "VOCB",
+    "name": "Coimbatore International Airport",
+    "city": "Coimbatore",
+    "lat": 11.03,
+    "lon": 77.0434
+  },
+  {
+    "iata": "TRZ",
+    "icao": "VOTR",
+    "name": "Tiruchirappalli International Airport",
+    "city": "Tiruchirappalli",
+    "lat": 10.7654,
+    "lon": 78.7097
+  },
+  {
+    "iata": "IXM",
+    "icao": "VOMD",
+    "name": "Madurai Airport",
+    "city": "Madurai",
+    "lat": 9.8345,
+    "lon": 78.0934
+  },
+  {
+    "iata": "TCR",
+    "icao": "VOTK",
+    "name": "Tuticorin Airport",
+    "city": "Thoothukudi",
+    "lat": 8.7239,
+    "lon": 78.0256
+  },
+  {
+    "iata": "SXV",
+    "icao": "VOSM",
+    "name": "Salem Airport",
+    "city": "Salem",
+    "lat": 11.7831,
+    "lon": 78.0656
+  },
+  {
+    "iata": "VTZ",
+    "icao": "VOVZ",
+    "name": "Visakhapatnam International Airport",
+    "city": "Visakhapatnam",
+    "lat": 17.7212,
+    "lon": 83.2245
+  },
+  {
+    "iata": "VGA",
+    "icao": "VOBZ",
+    "name": "Vijayawada International Airport",
+    "city": "Vijayawada",
+    "lat": 16.5304,
+    "lon": 80.7968
+  },
+  {
+    "iata": "TIR",
+    "icao": "VOTP",
+    "name": "Tirupati Airport",
+    "city": "Tirupati",
+    "lat": 13.6325,
+    "lon": 79.5433
+  },
+  {
+    "iata": "RJA",
+    "icao": "VORY",
+    "name": "Rajahmundry Airport",
+    "city": "Rajahmundry",
+    "lat": 17.1106,
+    "lon": 81.8183
+  },
+  {
+    "iata": "CDP",
+    "icao": "VOCP",
+    "name": "Kadapa Airport",
+    "city": "Kadapa",
+    "lat": 14.51,
+    "lon": 78.7725
+  },
+  {
+    "iata": "KJB",
+    "icao": "VOKU",
+    "name": "Kurnool Airport",
+    "city": "Kurnool",
+    "lat": 15.7144,
+    "lon": 78.2917
+  },
+  {
+    "iata": "HBX",
+    "icao": "VAHB",
+    "name": "Hubballi Airport",
+    "city": "Hubli-Dharwad",
+    "lat": 15.3617,
+    "lon": 75.0849
+  },
+  {
+    "iata": "IXG",
+    "icao": "VABM",
+    "name": "Belagavi Airport",
+    "city": "Belagavi",
+    "lat": 15.8592,
+    "lon": 74.6183
+  },
+  {
+    "iata": "GBI",
+    "icao": "VOGB",
+    "name": "Kalaburagi Airport",
+    "city": "Gulbarga",
+    "lat": 17.3019,
+    "lon": 76.9536
+  },
+  {
+    "iata": "MYQ",
+    "icao": "VOMY",
+    "name": "Mysuru Airport",
+    "city": "Mysore",
+    "lat": 12.23,
+    "lon": 76.65
+  },
+  {
+    "iata": "RQY",
+    "icao": "VOSH",
+    "name": "Shivamogga Airport",
+    "city": "Shimoga",
+    "lat": 13.8647,
+    "lon": 75.6339
+  },
+  {
+    "iata": "IXX",
+    "icao": "VOBR",
+    "name": "Bidar Airport",
+    "city": "Bidar",
+    "lat": 17.9089,
+    "lon": 77.4844
+  },
+  {
+    "iata": "NAG",
+    "icao": "VANP",
+    "name": "Dr. Babasaheb Ambedkar International Airport",
+    "city": "Nagpur",
+    "lat": 21.0922,
+    "lon": 79.0472
+  },
+  {
+    "iata": "IDR",
+    "icao": "VAID",
+    "name": "Devi Ahilya Bai Holkar Airport",
+    "city": "Indore",
+    "lat": 22.7217,
+    "lon": 75.8011
+  },
+  {
+    "iata": "BHO",
+    "icao": "VABP",
+    "name": "Raja Bhoj Airport",
+    "city": "Bhopal",
+    "lat": 23.2875,
+    "lon": 77.3378
+  },
+  {
+    "iata": "GWL",
+    "icao": "VIGR",
+    "name": "Gwalior Airport",
+    "city": "Gwalior",
+    "lat": 26.2933,
+    "lon": 78.2278
+  },
+  {
+    "iata": "JLR",
+    "icao": "VAJB",
+    "name": "Jabalpur Airport",
+    "city": "Jabalpur",
+    "lat": 23.1778,
+    "lon": 80.0522
+  },
+  {
+    "iata": "HJR",
+    "icao": "VAKJ",
+    "name": "Khajuraho Airport",
+    "city": "Khajuraho",
+    "lat": 24.8172,
+    "lon": 79.9189
+  },
+  {
+    "iata": "REW",
+    "icao": "VA1B",
+    "name": "Rewa Airport",
+    "city": "Rewa",
+    "lat": 24.5367,
+    "lon": 81.3508
+  },
+  {
+    "iata": "RPR",
+    "icao": "VARP",
+    "name": "Swami Vivekananda Airport",
+    "city": "Raipur",
+    "lat": 21.1803,
+    "lon": 81.7389
+  },
+  {
+    "iata": "PAB",
+    "icao": "VABI",
+    "name": "Bilaspur Airport",
+    "city": "Bilaspur",
+    "lat": 21.9886,
+    "lon": 82.1111
+  },
+  {
+    "iata": "JGB",
+    "icao": "VAJS",
+    "name": "Jagdalpur Airport",
+    "city": "Jagdalpur",
+    "lat": 19.0739,
+    "lon": 82.0347
+  },
+  {
+    "iata": "IXU",
+    "icao": "VAAU",
+    "name": "Chhatrapati Sambhaji Nagar Airport",
+    "city": "Aurangabad",
+    "lat": 19.8631,
+    "lon": 75.3981
+  },
+  {
+    "iata": "KLH",
+    "icao": "VAKP",
+    "name": "Kolhapur Airport",
+    "city": "Kolhapur",
+    "lat": 16.6644,
+    "lon": 74.2817
+  },
+  {
+    "iata": "ISK",
+    "icao": "VAOZ",
+    "name": "Nashik Airport",
+    "city": "Nashik",
+    "lat": 20.1192,
+    "lon": 73.9136
+  },
+  {
+    "iata": "NDC",
+    "icao": "VAND",
+    "name": "Shri Guru Gobind Singh Ji Airport",
+    "city": "Nanded",
+    "lat": 19.1836,
+    "lon": 77.3194
+  },
+  {
+    "iata": "SAG",
+    "icao": "VASD",
+    "name": "Shirdi Airport",
+    "city": "Shirdi",
+    "lat": 19.6908,
+    "lon": 74.3775
+  },
+  {
+    "iata": "JLG",
+    "icao": "VAJL",
+    "name": "Jalgaon Airport",
+    "city": "Jalgaon",
+    "lat": 20.9639,
+    "lon": 75.6322
+  },
+  {
+    "iata": "SDW",
+    "icao": "VOSR",
+    "name": "Sindhudurg Airport",
+    "city": "Chipi",
+    "lat": 15.9861,
+    "lon": 73.535
+  },
+  {
+    "iata": "GOP",
+    "icao": "VEGK",
+    "name": "Mahayogi Gorakhnath Airport",
+    "city": "Gorakhpur",
+    "lat": 26.7397,
+    "lon": 83.4497
+  },
+  {
+    "iata": "VNS",
+    "icao": "VEBN",
+    "name": "Lal Bahadur Shastri International Airport",
+    "city": "Varanasi",
+    "lat": 25.4524,
+    "lon": 82.8593
+  },
+  {
+    "iata": "AYJ",
+    "icao": "VEAY",
+    "name": "Maharishi Valmiki International Airport",
+    "city": "Ayodhya",
+    "lat": 26.7369,
+    "lon": 82.1558
+  },
+  {
+    "iata": "IXD",
+    "icao": "VEAB",
+    "name": "Prayagraj Airport",
+    "city": "Prayagraj",
+    "lat": 25.4403,
+    "lon": 81.7344
+  },
+  {
+    "iata": "KNU",
+    "icao": "VIKA",
+    "name": "Kanpur Airport",
+    "city": "Kanpur",
+    "lat": 26.4406,
+    "lon": 80.4128
+  },
+  {
+    "iata": "AGR",
+    "icao": "VIAG",
+    "name": "Agra Airport",
+    "city": "Agra",
+    "lat": 27.1558,
+    "lon": 77.9608
+  },
+  {
+    "iata": "BEK",
+    "icao": "VIBY",
+    "name": "Bareilly Airport",
+    "city": "Bareilly",
+    "lat": 28.4239,
+    "lon": 79.4503
+  },
+  {
+    "iata": "HDO",
+    "icao": "VIDX",
+    "name": "Hindon Airport",
+    "city": "Ghaziabad",
+    "lat": 28.7061,
+    "lon": 77.3592
+  },
+  {
+    "iata": "KBK",
+    "icao": "VEKI",
+    "name": "Kushinagar International Airport",
+    "city": "Kushinagar",
+    "lat": 26.7725,
+    "lon": 83.8978
+  },
+  {
+    "iata": "PAT",
+    "icao": "VEPT",
+    "name": "Jay Prakash Narayan International Airport",
+    "city": "Patna",
+    "lat": 25.5913,
+    "lon": 85.088
+  },
+  {
+    "iata": "GAY",
+    "icao": "VEGY",
+    "name": "Gaya Airport",
+    "city": "Gaya",
+    "lat": 24.7442,
+    "lon": 84.9511
+  },
+  {
+    "iata": "DBR",
+    "icao": "VEDH",
+    "name": "Darbhanga Airport",
+    "city": "Darbhanga",
+    "lat": 26.1969,
+    "lon": 85.9147
+  },
+  {
+    "iata": "IXR",
+    "icao": "VERC",
+    "name": "Birsa Munda Airport",
+    "city": "Ranchi",
+    "lat": 23.3142,
+    "lon": 85.3217
+  },
+  {
+    "iata": "DGH",
+    "icao": "VEDO",
+    "name": "Deoghar Airport",
+    "city": "Deoghar",
+    "lat": 24.4442,
+    "lon": 86.7036
+  },
+  {
+    "iata": "IXW",
+    "icao": "VEJS",
+    "name": "Sonari Airport",
+    "city": "Jamshedpur",
+    "lat": 22.8136,
+    "lon": 86.1683
+  },
+  {
+    "iata": "BBI",
+    "icao": "VEBS",
+    "name": "Biju Patnaik International Airport",
+    "city": "Bhubaneswar",
+    "lat": 20.2444,
+    "lon": 85.8178
+  },
+  {
+    "iata": "JRG",
+    "icao": "VEJH",
+    "name": "Veer Surendra Sai Airport",
+    "city": "Jharsuguda",
+    "lat": 21.9142,
+    "lon": 84.0506
+  },
+  {
+    "iata": "RRK",
+    "icao": "VERK",
+    "name": "Rourkela Airport",
+    "city": "Rourkela",
+    "lat": 22.2575,
+    "lon": 84.8144
+  },
+  {
+    "iata": "UKE",
+    "icao": "VEUK",
+    "name": "Utkela Airport",
+    "city": "Kalahandi",
+    "lat": 20.1,
+    "lon": 83.1833
+  },
+  {
+    "iata": "PYB",
+    "icao": "VEJP",
+    "name": "Jeypore Airport",
+    "city": "Jeypore",
+    "lat": 18.8778,
+    "lon": 82.5519
+  },
+  {
+    "iata": "IXB",
+    "icao": "VEBD",
+    "name": "Bagdogra Airport",
+    "city": "Siliguri",
+    "lat": 26.6812,
+    "lon": 88.3286
+  },
+  {
+    "iata": "RDP",
+    "icao": "VEDG",
+    "name": "Kazi Nazrul Islam Airport",
+    "city": "Durgapur",
+    "lat": 23.6239,
+    "lon": 87.2408
+  },
+  {
+    "iata": "COH",
+    "icao": "VECO",
+    "name": "Cooch Behar Airport",
+    "city": "Cooch Behar",
+    "lat": 26.3314,
+    "lon": 89.4678
+  },
+  {
+    "iata": "STV",
+    "icao": "VASU",
+    "name": "Surat International Airport",
+    "city": "Surat",
+    "lat": 21.1142,
+    "lon": 72.7417
+  },
+  {
+    "iata": "BDQ",
+    "icao": "VABO",
+    "name": "Vadodara Airport",
+    "city": "Vadodara",
+    "lat": 22.3361,
+    "lon": 73.2264
+  },
+  {
+    "iata": "HSR",
+    "icao": "VAHS",
+    "name": "Rajkot International Airport",
+    "city": "Hirasar, Rajkot",
+    "lat": 22.3667,
+    "lon": 70.9833
+  },
+  {
+    "iata": "JGA",
+    "icao": "VAJM",
+    "name": "Jamnagar Airport",
+    "city": "Jamnagar",
+    "lat": 22.4647,
+    "lon": 70.0125
+  },
+  {
+    "iata": "BHJ",
+    "icao": "VABJ",
+    "name": "Bhuj Airport",
+    "city": "Bhuj",
+    "lat": 23.2878,
+    "lon": 69.67
+  },
+  {
+    "iata": "BHU",
+    "icao": "VABV",
+    "name": "Bhavnagar Airport",
+    "city": "Bhavnagar",
+    "lat": 21.7522,
+    "lon": 72.1856
+  },
+  {
+    "iata": "PBD",
+    "icao": "VAPR",
+    "name": "Porbandar Airport",
+    "city": "Porbandar",
+    "lat": 21.6489,
+    "lon": 69.6572
+  },
+  {
+    "iata": "IXK",
+    "icao": "VAKS",
+    "name": "Keshod Airport",
+    "city": "Junagadh",
+    "lat": 21.3175,
+    "lon": 70.2678
+  },
+  {
+    "iata": "IXY",
+    "icao": "VAKE",
+    "name": "Kandla Airport",
+    "city": "Gandhidham",
+    "lat": 23.1128,
+    "lon": 70.1006
+  },
+  {
+    "iata": "UDR",
+    "icao": "VAUD",
+    "name": "Maharana Pratap Airport",
+    "city": "Udaipur",
+    "lat": 24.6178,
+    "lon": 73.8961
+  },
+  {
+    "iata": "JDH",
+    "icao": "VIJO",
+    "name": "Jodhpur Airport",
+    "city": "Jodhpur",
+    "lat": 26.2511,
+    "lon": 73.0489
+  },
+  {
+    "iata": "JSA",
+    "icao": "VIJR",
+    "name": "Jaisalmer Airport",
+    "city": "Jaisalmer",
+    "lat": 26.8906,
+    "lon": 70.8653
+  },
+  {
+    "iata": "BKB",
+    "icao": "VIBK",
+    "name": "Bikaner Airport",
+    "city": "Bikaner",
+    "lat": 28.0706,
+    "lon": 73.2086
+  },
+  {
+    "iata": "KQH",
+    "icao": "VIKG",
+    "name": "Kishangarh Airport",
+    "city": "Ajmer",
+    "lat": 26.5986,
+    "lon": 74.8147
+  },
+  {
+    "iata": "ATQ",
+    "icao": "VIAR",
+    "name": "Sri Guru Ram Dass Jee International Airport",
+    "city": "Amritsar",
+    "lat": 31.7096,
+    "lon": 74.7973
+  },
+  {
+    "iata": "IXC",
+    "icao": "VICG",
+    "name": "Shaheed Bhagat Singh International Airport",
+    "city": "Chandigarh",
+    "lat": 30.6735,
+    "lon": 76.7885
+  },
+  {
+    "iata": "AIP",
+    "icao": "VIAX",
+    "name": "Adampur Airport",
+    "city": "Jalandhar",
+    "lat": 31.4339,
+    "lon": 75.7578
+  },
+  {
+    "iata": "BUP",
+    "icao": "VIBT",
+    "name": "Bathinda Airport",
+    "city": "Bathinda",
+    "lat": 30.2689,
+    "lon": 74.7572
+  },
+  {
+    "iata": "IXP",
+    "icao": "VIPK",
+    "name": "Pathankot Airport",
+    "city": "Pathankot",
+    "lat": 32.2339,
+    "lon": 75.6339
+  },
+  {
+    "iata": "LUH",
+    "icao": "VILD",
+    "name": "Sahnewal Airport",
+    "city": "Ludhiana",
+    "lat": 30.8553,
+    "lon": 75.9558
+  },
+  {
+    "iata": "DED",
+    "icao": "VIDN",
+    "name": "Jolly Grant Airport",
+    "city": "Dehradun",
+    "lat": 30.1897,
+    "lon": 78.1803
+  },
+  {
+    "iata": "PGH",
+    "icao": "VIPT",
+    "name": "Pantnagar Airport",
+    "city": "Pantnagar",
+    "lat": 29.0336,
+    "lon": 79.4739
+  },
+  {
+    "iata": "NNS",
+    "icao": "VIPH",
+    "name": "Pithoragarh Airport",
+    "city": "Pithoragarh",
+    "lat": 29.5936,
+    "lon": 80.2444
+  },
+  {
+    "iata": "SLV",
+    "icao": "VISM",
+    "name": "Shimla Airport",
+    "city": "Shimla",
+    "lat": 31.0817,
+    "lon": 77.0683
+  },
+  {
+    "iata": "DHM",
+    "icao": "VIGG",
+    "name": "Kangra Airport",
+    "city": "Dharamshala",
+    "lat": 32.165,
+    "lon": 76.2633
+  },
+  {
+    "iata": "KUU",
+    "icao": "VIBR",
+    "name": "Kullu-Manali Airport",
+    "city": "Bhuntar",
+    "lat": 31.8767,
+    "lon": 77.1542
+  },
+  {
+    "iata": "IXJ",
+    "icao": "VIJU",
+    "name": "Jammu Airport",
+    "city": "Jammu",
+    "lat": 32.6892,
+    "lon": 74.8375
+  },
+  {
+    "iata": "SXR",
+    "icao": "VISR",
+    "name": "Sheikh ul-Alam International Airport",
+    "city": "Srinagar",
+    "lat": 33.9871,
+    "lon": 74.7744
+  },
+  {
+    "iata": "IXL",
+    "icao": "VILH",
+    "name": "Kushok Bakula Rimpochee Airport",
+    "city": "Leh",
+    "lat": 34.1358,
+    "lon": 77.5464
+  },
+  {
+    "iata": "DIB",
+    "icao": "VEMN",
+    "name": "Dibrugarh Airport",
+    "city": "Dibrugarh",
+    "lat": 27.4839,
+    "lon": 95.0189
+  },
+  {
+    "iata": "IXS",
+    "icao": "VECX",
+    "name": "Silchar Airport",
+    "city": "Silchar",
+    "lat": 24.9136,
+    "lon": 92.9792
+  },
+  {
+    "iata": "JRH",
+    "icao": "VEJT",
+    "name": "Jorhat Airport",
+    "city": "Jorhat",
+    "lat": 26.7317,
+    "lon": 94.1756
+  },
+  {
+    "iata": "TEZ",
+    "icao": "VETZ",
+    "name": "Tezpur Airport",
+    "city": "Tezpur",
+    "lat": 26.7114,
+    "lon": 92.7989
+  },
+  {
+    "iata": "IXI",
+    "icao": "VELR",
+    "name": "Lilabari Airport",
+    "city": "North Lakhimpur",
+    "lat": 27.2961,
+    "lon": 94.0978
+  },
+  {
+    "iata": "RUP",
+    "icao": "VERU",
+    "name": "Rupsi Airport",
+    "city": "Dhubri",
+    "lat": 26.1397,
+    "lon": 89.9078
+  },
+  {
+    "iata": "IMF",
+    "icao": "VEIM",
+    "name": "Bir Tikendrajit International Airport",
+    "city": "Imphal",
+    "lat": 24.76,
+    "lon": 93.8967
+  },
+  {
+    "iata": "IXA",
+    "icao": "VEAT",
+    "name": "Maharaja Bir Bikram Airport",
+    "city": "Agartala",
+    "lat": 23.8869,
+    "lon": 91.2406
+  },
+  {
+    "iata": "AJL",
+    "icao": "VELP",
+    "name": "Lengpui Airport",
+    "city": "Aizawl",
+    "lat": 23.8406,
+    "lon": 92.6194
+  },
+  {
+    "iata": "DMU",
+    "icao": "VEMR",
+    "name": "Dimapur Airport",
+    "city": "Dimapur",
+    "lat": 25.8839,
+    "lon": 93.7711
+  },
+  {
+    "iata": "SHL",
+    "icao": "VEBI",
+    "name": "Shillong Airport",
+    "city": "Umroi",
+    "lat": 25.7036,
+    "lon": 91.9786
+  },
+  {
+    "iata": "HGI",
+    "icao": "VEHO",
+    "name": "Donyi Polo Airport",
+    "city": "Hollongi, Itanagar",
+    "lat": 26.9833,
+    "lon": 93.6333
+  },
+  {
+    "iata": "TEI",
+    "icao": "VETJ",
+    "name": "Tezu Airport",
+    "city": "Tezu",
+    "lat": 27.9406,
+    "lon": 96.1344
+  },
+  {
+    "iata": "IXT",
+    "icao": "VEPG",
+    "name": "Pasighat Airport",
+    "city": "Pasighat",
+    "lat": 28.0667,
+    "lon": 95.3333
+  },
+  {
+    "iata": "IXZ",
+    "icao": "VOPB",
+    "name": "Veer Savarkar International Airport",
+    "city": "Port Blair",
+    "lat": 11.6414,
+    "lon": 92.7297
+  },
+  {
+    "iata": "AGX",
+    "icao": "VOAT",
+    "name": "Agatti Airport",
+    "city": "Lakshadweep",
+    "lat": 10.8236,
+    "lon": 72.1764
+  }
+]

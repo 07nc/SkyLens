@@ -12,6 +12,10 @@ import MapFilterBar from '../UI/MapFilterBar';
 
 import { useFlights } from '../../context/FlightContext';
 
+import airportsData from '../../data/airports.json';
+import AirportMarker from './AirportMarker';
+
+
 function ZoomTracker({ onZoomChange }) {
   useMapEvents({
     zoomend: (e) => {
@@ -24,8 +28,8 @@ function ZoomTracker({ onZoomChange }) {
 
 export default function LiveMap() {
   const indiaBounds = [
-    [6.0, 68.0],
-    [37.5, 97.5]
+    [5.0, 65.0],
+    [38.5, 100.0]
   ];
   const { liveFlights, selectedFlightID, setSelectedFlightID } = useFlights();
   const [filterAirlineIcao, setFilterAirlineIcao] = useState(null);
@@ -61,14 +65,14 @@ export default function LiveMap() {
         onAirlineSelect={setFilterAirlineIcao}
       />
       <MapContainer
-        center={[20.5937, 78.9629]}
+        center={[22.5, 82.5]}
         zoom={5}
         minZoom={5}
         scrollWheelZoom={true}
         zoomSnap={1}
         zoomDelta={1}
         touchZoom={true}
-        maxBoundsViscosity={1.0}
+        maxBoundsViscosity={0.7}
         style={{ height: '100%', width: '100%', zIndex: 0 }}
         maxBounds={indiaBounds}
       >
@@ -85,6 +89,10 @@ export default function LiveMap() {
               setSelectedFlightID(idToSelect);
             }}
           />
+        ))}
+
+        {airportsData.map((airport) => (
+          <AirportMarker key={airport.icao} airport={airport} />
         ))}
         <UserLocationMarker />
 

@@ -1,121 +1,122 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #0b0f14;
-    color: #f1f5f9;
+  font-family: Arial, sans-serif;
+  background: #0b0f14;
+  color: #f1f5f9;
 }
 
 .navbar {
-    width: 100%;
-    height: 72px;
-    background: #0b0101;
-    border-bottom: 1px solid #26313d;
+  width: 100%;
+  height: 72px;
+  background: #0b0101;
+  border-bottom: 1px solid #26313d;
 }
 
 .nav-container {
-    max-width: 1400px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0 32px;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo-name {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-    font-size: 23px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 
-    color: #f1f5f9;
+  color: #f1f5f9;
 }
 
 .logo-name span:first-child {
-    color: #FF2A55;
-    font-size: 20px;
+  color: #FF2A55;
+  font-size: 20px;
 }
 
 .nav-buttons {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .switch-buttons {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .nav-buttons button {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 
-    background: transparent;
-    color: #94a3b8;
+  background: transparent;
+  color: #94a3b8;
 
-    padding: 10px 16px;
-    border-radius: 7px;
+  padding: 10px 16px;
+  border-radius: 7px;
 
-    font-size: 14px;
-    font-weight: 500;
+  font-size: 14px;
+  font-weight: 500;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .nav-buttons button:hover {
-    background: #1f0404;
-    color: #FF2A55;
+  background: #1f0404;
+  color: #FF2A55;
 }
 
 .switch-buttons button.active {
-    background: #1f0404;
-    color: #FF2A55;
-    box-shadow: inset 0 -2px 0 #FF2A55;
+  background: #1f0404;
+  color: #FF2A55;
+  box-shadow: inset 0 -2px 0 #FF2A55;
 }
 
 @media (max-width: 650px) {
-    .nav-container {
-        padding: 0 16px;
-    }
+  .nav-container {
+    padding: 0 16px;
+  }
 
-    .logo-name {
-        font-size: 19px;
-    }
+  .logo-name {
+    font-size: 19px;
+  }
 
-    .nav-buttons {
-        gap: 5px;
-    }
+  .nav-buttons {
+    gap: 5px;
+  }
 
-    .switch-buttons {
-        gap: 2px;
-    }
+  .switch-buttons {
+    gap: 2px;
+  }
 
-    .nav-buttons button {
-        padding: 8px 10px;
-        font-size: 13px;
-    }
+  .nav-buttons button {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
 }
 
-.selected-airplane div{
-  scale:1.1;
-  filter: drop-shadow(0px 0px 8px #002aff); 
-  
+.selected-airplane div {
+  scale: 1.1;
+  filter: drop-shadow(0px 0px 8px #002aff);
+
 }
+
 .selected-airplane::after {
   content: "";
   position: absolute;
@@ -128,7 +129,7 @@ body {
   box-shadow: 0 0 10px #00FFFF;
   border-radius: 50%;
   opacity: 0;
-  animation: radar-pulse 2s infinite linear; 
+  animation: radar-pulse 2s infinite linear;
 }
 
 .selected-airplane::before {
@@ -143,7 +144,7 @@ body {
   box-shadow: 0 0 10px #00FFFF;
   border-radius: 50%;
   opacity: 0;
-  animation: radar-pulse 2s infinite linear 0.9s; 
+  animation: radar-pulse 2s infinite linear 0.9s;
 }
 
 @keyframes radar-pulse {
@@ -153,12 +154,14 @@ body {
     opacity: 0;
     border-width: 4px;
   }
+
   8% {
     width: 20px;
     height: 20px;
     opacity: 0.8;
     border-width: 4px;
   }
+
   100% {
     width: 100px;
     height: 100px;
@@ -167,7 +170,7 @@ body {
   }
 }
 
-.userLocationDot{
+.userLocationDot {
   width: 10px;
   height: 10px;
   background-color: rgb(0, 102, 255);
@@ -176,7 +179,8 @@ body {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   border-radius: 50%;
 }
-.userLocationContainer{
+
+.userLocationContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,131 +191,127 @@ body {
 
 
 .flight-results {
-    width: 100%;
-    margin-top: 24px;
-    border: 1px solid #2d1010;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #120202;
+  width: 100%;
+  margin-top: 24px;
+  border: 1px solid #2d1010;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #120202;
 }
 
 .flight-row-header,
 .flight-row-result {
-    display: grid;
-    grid-template-columns:
-        1.4fr
-        1fr
-        1fr
-        2fr
-        1.4fr
-        1.4fr;
+  display: grid;
+  grid-template-columns:
+    1.4fr 1fr 1fr 2fr 1.4fr 1.4fr;
 
-    align-items: center;
+  align-items: center;
 }
 
 .flight-row-header {
-    padding: 14px 16px;
-    background: #1f0404;
-    color: #FF2A55;
+  padding: 14px 16px;
+  background: #1f0404;
+  color: #FF2A55;
 
-    font-size: 13px;
-    font-weight: 600;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .flight-row-result {
-    padding: 16px;
+  padding: 16px;
 
-    color: #dbe4ee;
-    font-size: 14px;
+  color: #dbe4ee;
+  font-size: 14px;
 
-    border-top: 1px solid #26313d;
+  border-top: 1px solid #26313d;
 
-    transition: background 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .flight-row-result:hover {
-    background: #1f0404;
+  background: #1f0404;
 }
 
-.flight-row-result > div:nth-child(2) {
-    color: #FF2A55;
-    font-weight: 500;
+.flight-row-result>div:nth-child(2) {
+  color: #FF2A55;
+  font-weight: 500;
 }
 
-.flight-row-result > div:nth-child(4) {
-    color: #94a3b8;
+.flight-row-result>div:nth-child(4) {
+  color: #94a3b8;
 }
+
 .flight-finder-view {
-    min-height: calc(100vh - 83px);
-    padding: 40px 6%;
-    background: #0b0101;
-    color: #e5e7eb;
+  min-height: calc(100vh - 83px);
+  padding: 40px 6%;
+  background: #0b0101;
+  color: #e5e7eb;
 }
 
 .flight-finder-form {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 30px;
-    background: #120202;
-    border: 1px solid #26313d;
-    border-radius: 14px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #120202;
+  border: 1px solid #26313d;
+  border-radius: 14px;
 }
 
 .flight-finder-form h2 {
-    margin-bottom: 25px;
-    font-size: 28px;
-    color: #f1f5f9;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #f1f5f9;
 }
 
 .form-fields {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr auto;
-    gap: 18px;
-    align-items: end;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 18px;
+  align-items: end;
 }
 
 .form-inp {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .form-inp label {
-    font-size: 13px;
-    color: #94a3b8;
-    font-weight: 500;
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
 }
 
 .form-inp input {
-    width: 100%;
-    padding: 12px 14px;
-    background: #0b1117;
-    color: #e5e7eb;
-    border: 1px solid #334155;
-    border-radius: 8px;
-    outline: none;
-    font-size: 14px;
+  width: 100%;
+  padding: 12px 14px;
+  background: #0b1117;
+  color: #e5e7eb;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
 }
 
 .form-inp input:focus {
-    border-color: #FF2A55;
-    box-shadow: 0 0 0 2px rgba(255, 42, 85, 0.12);
+  border-color: #FF2A55;
+  box-shadow: 0 0 0 2px rgba(255, 42, 85, 0.12);
 }
 
 .search-button {
-    padding: 12px 20px;
-    background: #FF2A55;
-    color: #071018;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s ease;
+  padding: 12px 20px;
+  background: #FF2A55;
+  color: #071018;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .search-button:hover {
-    background: #ff4f73;
+  background: #ff4f73;
 }
 
 .map-filter-bar {

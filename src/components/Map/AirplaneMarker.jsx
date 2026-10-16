@@ -62,3 +62,5 @@ export default function AirplaneMarker({ flight, isSelected, onSelect }) {
 
     </Marker>
 }
+
+
