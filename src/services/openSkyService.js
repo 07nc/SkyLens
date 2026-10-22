@@ -4,7 +4,7 @@ const CLIENT_ID = import.meta.env.VITE_OPENSKY_CLIENT_ID
 const CLIENT_SECRET = import.meta.env.VITE_OPENSKY_CLIENT_SECRET
 
 const POLL_INTERVAL_MS = 30000
-const INDIA_BOUNDS = {lamin: 6.5, lamax: 37.5, lomin: 68.0, lomax: 97.5}
+const INDIA_BOUNDS = { lamin: 6.5, lamax: 37.5, lomin: 68.0, lomax: 97.5 }
 
 let cachedToken = null
 let tokenExpiresAt = 0
@@ -37,7 +37,7 @@ async function getAccessToken() {
     return cachedToken
 }
 
-async function fetchLiveFlights(){
+async function fetchLiveFlights() {
     const token = await getAccessToken()
 
     const params = new URLSearchParams({
@@ -63,20 +63,20 @@ async function fetchLiveFlights(){
 
 
 function parseFlightData(rawData) {
-  if (!rawData || !rawData.states) {
-    return [];
-  }
+    if (!rawData || !rawData.states) {
+        return [];
+    }
 
-  const flights = rawData.states
-  .filter(s => s[8] === false)
-  .map(s => ({
-        id: s[0],
-        callsign: s[1] ? s[1].trim() : "Unknown",
-        latitude: s[6],
-        longitude: s[5],
-        altitude: s[7] ?? null,
-        speed: s[9] ?? null,
-        heading: s[10] ?? null
+    const flights = rawData.states
+        .filter(s => s[8] === false)
+        .map(s => ({
+            id: s[0],
+            callsign: s[1] ? s[1].trim() : "Unknown",
+            latitude: s[6],
+            longitude: s[5],
+            altitude: s[7] ?? null,
+            speed: s[9] ?? null,
+            heading: s[10] ?? null
         }))
 
     return flights
@@ -84,8 +84,8 @@ function parseFlightData(rawData) {
 
 
 async function getLiveFlights() {
-  const rawData = await fetchLiveFlights();
-  return parseFlightData(rawData);
+    const rawData = await fetchLiveFlights();
+    return parseFlightData(rawData);
 }
 
 
