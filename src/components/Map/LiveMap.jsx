@@ -5,7 +5,7 @@ import {
   Popup
 } from 'react-leaflet';
 import AirplaneMarker from './AirplaneMarker';
-
+import UserLocationMarker from './UserLocationMarker';
 
 //mock useFlights function
 import { useState } from 'react';
@@ -53,7 +53,8 @@ export default function LiveMap() {
           onSelect={onSelect}      
         />
       ))}
-
+      <UserLocationMarker/>
+      
       </MapContainer>
     </>
   );
