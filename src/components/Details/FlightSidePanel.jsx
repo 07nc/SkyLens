@@ -17,7 +17,6 @@ const getAirport = (code, info) => {
 };
 
 export default function FlightSidePanel() {
-
     const { selectedFlightID, setSelectedFlightID, liveFlights } = useFlights();
     const [details, setDetails] = useState(null);
     const [loading, setLoading] = useState(false);
