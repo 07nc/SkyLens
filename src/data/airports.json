@@ -1,5 +1,14 @@
 [
   {
+    "iata": "DXB",
+    "icao": "OMDB",
+    "name": "Dubai International Airport",
+    "city": "Dubai",
+    "lat": 25.2532,
+    "lon": 55.3657,
+    "type": "international"
+  },
+  {
     "iata": "DEL",
     "icao": "VIDP",
     "name": "Indira Gandhi International Airport",

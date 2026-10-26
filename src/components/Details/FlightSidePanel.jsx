@@ -4,6 +4,7 @@ import { fetchFlightDetails } from '../../services/flightDetailsService';
 import { fetchAircraftPhoto } from '../../services/planespottersService';
 import AircraftPhotoCard from './AircraftPhotoCard';
 import LightboxModal from './LightboxModal';
+import RouteWeatherCards from './RouteWeatherCards';
 import airportsData from '../../data/airports.json';
 
 const getAirport = (code, info) => {
@@ -23,13 +24,11 @@ export default function FlightSidePanel() {
     const [photo, setPhoto] = useState(null);
     const [showModal, setShowModal] = useState(false);
 
-
     const selectedFlight = liveFlights.find(f => f.id === selectedFlightID);
     const origin = getAirport(details?.route?.[0], details?.origin);
     const destination = getAirport(details?.route?.[details?.route.length - 1], details?.destination);
 
     useEffect(() => {
-
         if (selectedFlightID && selectedFlight) {
             setLoading(true);
             setDetails(null);
@@ -169,6 +168,8 @@ export default function FlightSidePanel() {
                                 )}
                             </div>
                         </div>
+
+                        <RouteWeatherCards route={details.route || (origin?.code && destination?.code ? [origin.code, destination.code] : null)} />
                     </div>
                 </div>
             ) : (
