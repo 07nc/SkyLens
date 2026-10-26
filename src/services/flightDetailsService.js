@@ -1,4 +1,3 @@
-import { getAccessToken } from './openSkyService';
 import airlinesData from '../data/airlines.json';
 
 export async function fetchFlightDetails(icao24, callsign) {
@@ -17,16 +16,30 @@ export async function fetchFlightDetails(icao24, callsign) {
     const fetchRoute = async () => {
         if (!callsign || callsign === "Unknown") return null;
         try {
-            const token = await getAccessToken();
-            const res = await fetch(`/api/opensky/routes?callsign=${callsign}`, {
-                headers: { Authorization: `Bearer ${token}` }
-            });
-            if (!res.ok) return null;
-            return await res.json();
+            const cleanCallsign = callsign.trim().toUpperCase();
+            let res = await fetch(`https://api.adsbdb.com/v0/callsign/${cleanCallsign}`);
+            if (!res.ok && /[A-Z]$/.test(cleanCallsign)) {
+                res = await fetch(`https://api.adsbdb.com/v0/callsign/${cleanCallsign.slice(0, -1)}`);
+            }
+            if (res.ok) {
+                const data = await res.json();
+                const route = data?.response?.flightroute;
+                if (route?.origin && route?.destination) {
+                    return {
+                        route: [
+                            route.origin.iata_code || route.origin.icao_code,
+                            route.destination.iata_code || route.destination.icao_code
+                        ],
+                        origin: route.origin,
+                        destination: route.destination,
+                        airlineName: route.airline?.name
+                    };
+                }
+            }
         } catch (error) {
-            console.error("OpenSky Routes fetch failed:", error);
-            return null;
+            console.error("Route fetch failed:", error);
         }
+        return null;
     };
 
     try {
@@ -37,7 +50,7 @@ export async function fetchFlightDetails(icao24, callsign) {
 
         const airlineIcao = callsign && callsign.length >= 3 ? callsign.substring(0, 3).toUpperCase() : null;
         const matchedAirline = airlinesData.find(a => a.icao === airlineIcao);
-        const AirlineName = matchedAirline ? matchedAirline.name : (aircraftData?.RegisteredOwners || 'Unknown');
+        const AirlineName = matchedAirline ? matchedAirline.name : (routeData?.airlineName || aircraftData?.RegisteredOwners || 'Unknown');
 
         return {
             registration: aircraftData?.Registration || 'N12345',
@@ -46,6 +59,8 @@ export async function fetchFlightDetails(icao24, callsign) {
             airline: AirlineName,
             icaoTypeCode: aircraftData?.ICAOTypeCode || 'B738',
             route: routeData?.route || [],
+            origin: routeData?.origin || null,
+            destination: routeData?.destination || null,
         };
     } catch (error) {
 
