@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useFlights } from '../../context/FlightContext';
 import { fetchFlightDetails } from '../../services/flightDetailsService';
+import { fetchAircraftPhoto } from '../../services/planespottersService';
+import AircraftPhotoCard from './AircraftPhotoCard';
+import LightboxModal from './LightboxModal';
 
 export default function FlightSidePanel() {
 
     const { selectedFlightID, setSelectedFlightID, liveFlights } = useFlights();
     const [details, setDetails] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [photo, setPhoto] = useState(null);
+    const [showModal, setShowModal] = useState(false);
 
 
     const selectedFlight = liveFlights.find(f => f.id === selectedFlightID);
@@ -16,11 +21,20 @@ export default function FlightSidePanel() {
         if (selectedFlightID && selectedFlight) {
             setLoading(true);
             setDetails(null);
+            setPhoto(null);
+            setShowModal(false);
 
             fetchFlightDetails(selectedFlightID, selectedFlight.callsign)
                 .then(data => {
                     setDetails(data);
                     setLoading(false);
+
+                    if (data && data.registration) {
+                        fetchAircraftPhoto(data.registration)
+                            .then(photoData => {
+                                setPhoto(photoData);
+                            });
+                    }
                 })
                 .catch(err => {
                     console.error("Error fetching details:", err);
@@ -73,6 +87,13 @@ export default function FlightSidePanel() {
                 <p style={{ color: '#94a3b8' }}>Loading flight data...</p>
             ) : details ? (
                 <div>
+                    <div style={{ marginBottom: '16px' }}>
+                        <AircraftPhotoCard
+                            photoData={photo}
+                            onClickPhoto={() => setShowModal(true)}
+                        />
+                    </div>
+
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                         <div>
                             <span style={{ color: '#94a3b8', fontSize: '13px' }}>Airline</span>
@@ -137,6 +158,12 @@ export default function FlightSidePanel() {
                     </div>
                 </div>
             )}
+
+            <LightboxModal
+                isOpen={showModal}
+                photoData={photo}
+                onClose={() => setShowModal(false)}
+            />
         </div>
     );
 }
