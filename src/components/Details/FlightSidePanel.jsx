@@ -5,17 +5,6 @@ import { fetchAircraftPhoto } from '../../services/planespottersService';
 import AircraftPhotoCard from './AircraftPhotoCard';
 import LightboxModal from './LightboxModal';
 import RouteWeatherCards from './RouteWeatherCards';
-import airportsData from '../../data/airports.json';
-
-const getAirport = (code, info) => {
-    if (!code || code === 'Unknown') return null;
-    const match = airportsData.find(a => a.iata === code || a.icao === code);
-    return {
-        code,
-        city: match?.city || info?.municipality || '',
-        name: match?.name || info?.name || ''
-    };
-};
 
 export default function FlightSidePanel() {
     const { selectedFlightID, setSelectedFlightID, liveFlights } = useFlights();
@@ -25,8 +14,6 @@ export default function FlightSidePanel() {
     const [showModal, setShowModal] = useState(false);
 
     const selectedFlight = liveFlights.find(f => f.id === selectedFlightID);
-    const origin = getAirport(details?.route?.[0], details?.origin);
-    const destination = getAirport(details?.route?.[details?.route.length - 1], details?.destination);
 
     useEffect(() => {
         if (selectedFlightID && selectedFlight) {
@@ -125,51 +112,7 @@ export default function FlightSidePanel() {
                     </div>
 
                     <div style={{ marginTop: '20px' }}>
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: '1fr 1fr',
-                            gap: '12px',
-                            marginBottom: '16px',
-                            background: '#1a0505',
-                            padding: '14px',
-                            borderRadius: '8px',
-                            border: '1px solid #26313d'
-                        }}>
-                            <div>
-                                <span style={{ color: '#94a3b8', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Origin</span>
-                                <div style={{ color: '#f1f5f9', fontWeight: '700', fontSize: '18px', marginTop: '2px' }}>
-                                    {origin?.code || 'Unknown'}
-                                </div>
-                                {origin?.city && (
-                                    <div style={{ color: '#FF2A55', fontSize: '13px', fontWeight: '500', marginTop: '3px' }}>
-                                        {origin.city}
-                                    </div>
-                                )}
-                                {origin?.name && (
-                                    <div style={{ color: '#94a3b8', fontSize: '11px', marginTop: '2px', lineHeight: '1.3' }}>
-                                        {origin.name}
-                                    </div>
-                                )}
-                            </div>
-                            <div>
-                                <span style={{ color: '#94a3b8', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Destination</span>
-                                <div style={{ color: '#f1f5f9', fontWeight: '700', fontSize: '18px', marginTop: '2px' }}>
-                                    {destination?.code || 'Unknown'}
-                                </div>
-                                {destination?.city && (
-                                    <div style={{ color: '#FF2A55', fontSize: '13px', fontWeight: '500', marginTop: '3px' }}>
-                                        {destination.city}
-                                    </div>
-                                )}
-                                {destination?.name && (
-                                    <div style={{ color: '#94a3b8', fontSize: '11px', marginTop: '2px', lineHeight: '1.3' }}>
-                                        {destination.name}
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-
-                        <RouteWeatherCards route={details.route || (origin?.code && destination?.code ? [origin.code, destination.code] : null)} />
+                        <RouteWeatherCards route={details.route} />
                     </div>
                 </div>
             ) : (

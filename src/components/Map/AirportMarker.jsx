@@ -45,7 +45,7 @@ export default function AirportMarker({ airport }) {
       <Popup direction="top" offset={[0, -12]} opacity={0.95}>
         <div style={{ textAlign: 'center', padding: '3px 6px' }}>
           <strong style={{ color: '#ff2a55', fontSize: '13px', letterSpacing: '0.5px' }}>{airport.iata}</strong>
-          <span style={{ color: '#f1f5f9', fontSize: '11px', display: 'block', fontWeight: '500' }}>{airport.city}</span>
+          <span style={{ color: '#242424', fontSize: '11px', display: 'block', fontWeight: '500' }}>{airport.city}</span>
           <span style={{ color: '#94a3b8', fontSize: '10px', display: 'block' }}>{airport.name}</span>
         </div>
       </Popup>
