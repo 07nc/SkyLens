@@ -14,6 +14,7 @@ import { useFlights } from '../../context/FlightContext';
 
 import airportsData from '../../data/airports.json';
 import AirportMarker from './AirportMarker';
+import RadarFlightStats from './RadarFlightStats';
 
 import UserLocationButton from './UserLocationButton';
 
@@ -111,6 +112,7 @@ export default function LiveMap() {
         ))}
         <UserLocationMarker onLocationFound={setUserLocation} />
         <UserLocationButton userLocation={userLocation} />
+        <RadarFlightStats />
       </MapContainer>
     </div>
   );

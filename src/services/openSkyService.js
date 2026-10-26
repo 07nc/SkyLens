@@ -77,10 +77,10 @@ function parseFlightData(rawData) {
             altitude: s[7] ?? (s[8] ? 0 : null),
             speed: s[9] ?? null,
             heading: s[10] ?? null,
-            onGround: s[8]
-        }))
+            onGround: Boolean(s[8])
+        }));
 
-    return flights
+    return flights;
 }
 
 
