@@ -15,6 +15,7 @@ import { useFlights } from '../../context/FlightContext';
 import airportsData from '../../data/airports.json';
 import AirportMarker from './AirportMarker';
 
+import UserLocationButton from './UserLocationButton';
 
 function ZoomTracker({ onZoomChange }) {
   useMapEvents({
@@ -48,6 +49,11 @@ export default function LiveMap() {
       if (flight.id === selectedFlightID) {
         return true;
       }
+
+      if (flight.onGround) {
+        return currentZoom >= 8;
+      }
+
       const alt = flight.altitude;
       if (alt === null || alt === undefined) {
         return currentZoom >= 6;
@@ -57,6 +63,15 @@ export default function LiveMap() {
       if (currentZoom == 7) { return alt >= 2500; }
       return true;
     })
+
+  const visibleAirports = airportsData.filter((airport) => {
+    if (currentZoom <= 6) {
+      return airport.type == "international";
+    }
+    return true;
+  })
+
+  const [userLocation, setUserLocation] = useState(null);
 
   return (
     <div style={{ position: 'relative', height: '100%', width: '100%' }}>
@@ -91,11 +106,11 @@ export default function LiveMap() {
           />
         ))}
 
-        {airportsData.map((airport) => (
+        {visibleAirports.map((airport) => (
           <AirportMarker key={airport.icao} airport={airport} />
         ))}
-        <UserLocationMarker />
-
+        <UserLocationMarker onLocationFound={setUserLocation} />
+        <UserLocationButton userLocation={userLocation} />
       </MapContainer>
     </div>
   );

@@ -1,29 +1,30 @@
-import {useState,useEffect} from 'react';
-import {Marker, Popup} from 'react-leaflet';
+import { useState, useEffect } from 'react';
+import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import '../../index.css';
 
-export default function UserLocationMarker(){
-    const [position,setPosition]=useState(null);
-    useEffect(()=>{
-        if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(
-            (location)=>{setPosition([location.coords.latitude,location.coords.longitude])},
-            (error)=>{console.warn("Location access denied: ",error.message)},
-            {enableHighAccuracy:true,timeout:5000,maximumAge:0}
-        )}
-    },[])
-    if(!position){
+export default function UserLocationMarker({ onLocationFound }) {
+    const [position, setPosition] = useState(null);
+    useEffect(() => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (location) => { setPosition([location.coords.latitude, location.coords.longitude]); onLocationFound([location.coords.latitude, location.coords.longitude]) },
+                (error) => { console.warn("Location access denied: ", error.message) },
+                { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+            )
+        }
+    }, [])
+    if (!position) {
         return null;
     }
-    const userLocationIcon=L.divIcon({
-        html:`<div class="userLocationContainer">
+    const userLocationIcon = L.divIcon({
+        html: `<div class="userLocationContainer">
             <div class="userLocationDot"></div>
         </div>
         `,
-        className:'',
-        iconSize:[30,30],
-        iconAnchor:[15,15]
+        className: '',
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
     })
     return <Marker position={position} icon={userLocationIcon}>
         <Popup>You are here</Popup>

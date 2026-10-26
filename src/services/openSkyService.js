@@ -68,15 +68,16 @@ function parseFlightData(rawData) {
     }
 
     const flights = rawData.states
-        .filter(s => s[8] === false)
+        .filter(s => s[5] !== null && s[6] !== null)
         .map(s => ({
             id: s[0],
             callsign: s[1] ? s[1].trim() : "Unknown",
             latitude: s[6],
             longitude: s[5],
-            altitude: s[7] ?? null,
+            altitude: s[7] ?? (s[8] ? 0 : null),
             speed: s[9] ?? null,
-            heading: s[10] ?? null
+            heading: s[10] ?? null,
+            onGround: s[8]
         }))
 
     return flights

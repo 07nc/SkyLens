@@ -189,6 +189,29 @@ body {
   position: relative;
 }
 
+.user-location-btn {
+  position: absolute;
+  bottom: 28px;
+  right: 24px;
+  z-index: 1000;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  border: 1.5px solid #cbd5e1;
+  color: #0f172a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.user-location-btn:hover {
+  transform: scale(1.1);
+}
+
 
 .flight-results {
   width: 100%;
