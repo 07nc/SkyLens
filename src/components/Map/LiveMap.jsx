@@ -14,6 +14,7 @@ import { useFlights } from '../../context/FlightContext';
 
 import airportsData from '../../data/airports.json';
 import AirportMarker from './AirportMarker';
+import RadarFlightStats from './RadarFlightStats';
 
 
 function ZoomTracker({ onZoomChange }) {
@@ -95,7 +96,7 @@ export default function LiveMap() {
           <AirportMarker key={airport.icao} airport={airport} />
         ))}
         <UserLocationMarker />
-
+        <RadarFlightStats />
       </MapContainer>
     </div>
   );
