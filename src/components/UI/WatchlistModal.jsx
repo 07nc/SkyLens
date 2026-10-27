@@ -12,7 +12,6 @@ export default function WatchlistModal({ isOpen, onClose }) {
     if (!isOpen) return null;
 
     const handleTrackFlight = (flight) => {
-        // Try to match with current live flight by id or callsign
         const liveMatch = liveFlights.find(
             f => f.id === flight.id || (f.callsign && flight.callsign && f.callsign.toUpperCase() === flight.callsign.toUpperCase())
         );
@@ -55,7 +54,6 @@ export default function WatchlistModal({ isOpen, onClose }) {
                 overflow: 'hidden'
             }} onClick={(e) => e.stopPropagation()}>
                 
-                {/* Header */}
                 <div style={{
                     padding: '18px 24px',
                     borderBottom: '1px solid #26313d',
@@ -114,7 +112,6 @@ export default function WatchlistModal({ isOpen, onClose }) {
                     </div>
                 </div>
 
-                {/* List Container */}
                 <div style={{
                     padding: '16px 20px',
                     overflowY: 'auto',
@@ -188,7 +185,6 @@ export default function WatchlistModal({ isOpen, onClose }) {
                                             fontSize: '12px',
                                             color: '#94a3b8'
                                         }}>
-                                            {/* Live Radar Status */}
                                             <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                                                 <span style={{
                                                     display: 'inline-block',
@@ -209,7 +205,6 @@ export default function WatchlistModal({ isOpen, onClose }) {
                                         </div>
                                     </div>
 
-                                    {/* Action buttons */}
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                         <button
                                             onClick={() => handleTrackFlight(flight)}
