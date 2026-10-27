@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useFlights } from '../../context/FlightContext';
 import { fetchFlightDetails } from '../../services/flightDetailsService';
 import { fetchAircraftPhoto } from '../../services/planespottersService';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleWatchlist } from '../../store/watchlistSlice';
 import AircraftPhotoCard from './AircraftPhotoCard';
 import LightboxModal from './LightboxModal';
 import RouteWeatherCards from './RouteWeatherCards';
@@ -13,7 +15,12 @@ export default function FlightSidePanel() {
     const [photo, setPhoto] = useState(null);
     const [showModal, setShowModal] = useState(false);
 
+    const dispatch = useDispatch();
+    const watchlist = useSelector(state => state.watchlist);
     const selectedFlight = liveFlights.find(f => f.id === selectedFlightID);
+    const isBookmarked = watchlist.some(
+        f => f.id === selectedFlightID || (selectedFlight?.callsign && f.callsign === selectedFlight.callsign)
+    );
 
     useEffect(() => {
         if (selectedFlightID && selectedFlight) {
@@ -66,19 +73,52 @@ export default function FlightSidePanel() {
         }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                 <h2 style={{ fontSize: '20px', margin: 0, color: '#f1f5f9' }}>Flight Details</h2>
-                <button
-                    onClick={() => setSelectedFlightID(null)}
-                    style={{
-                        background: 'transparent',
-                        color: '#94a3b8',
-                        border: 'none',
-                        fontSize: '18px',
-                        cursor: 'pointer',
-                        padding: '4px'
-                    }}
-                >
-                    ✕
-                </button>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <button
+                        onClick={() => {
+                            if (selectedFlight) {
+                                dispatch(toggleWatchlist({
+                                    id: selectedFlight.id,
+                                    callsign: selectedFlight.callsign,
+                                    airline: details?.airline,
+                                    model: details?.model,
+                                    route: details?.route
+                                }));
+                            }
+                        }}
+                        title={isBookmarked ? "Remove from Watchlist" : "Add to Watchlist"}
+                        style={{
+                            background: isBookmarked ? 'rgba(255, 193, 7, 0.15)' : 'rgba(255, 255, 255, 0.05)',
+                            color: isBookmarked ? '#ffc107' : '#94a3b8',
+                            border: isBookmarked ? '1px solid rgba(255, 193, 7, 0.4)' : '1px solid #26313d',
+                            borderRadius: '6px',
+                            fontSize: '13px',
+                            fontWeight: '600',
+                            cursor: 'pointer',
+                            padding: '4px 10px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '5px',
+                            transition: 'all 0.2s ease'
+                        }}
+                    >
+                        <span>{isBookmarked ? '★' : '☆'}</span>
+                        <span>{isBookmarked ? 'Saved' : 'Watch'}</span>
+                    </button>
+                    <button
+                        onClick={() => setSelectedFlightID(null)}
+                        style={{
+                            background: 'transparent',
+                            color: '#94a3b8',
+                            border: 'none',
+                            fontSize: '18px',
+                            cursor: 'pointer',
+                            padding: '4px'
+                        }}
+                    >
+                        ✕
+                    </button>
+                </div>
             </div>
 
             {loading ? (
